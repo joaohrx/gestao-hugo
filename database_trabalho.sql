@@ -22,3 +22,11 @@ fun_data_admissao date not null,
 foreign key (fun_car_id) references tb_cargos(car_id),
 foreign key (fun_dep_id) references tb_departamentos(dep_id)
 );
+
+insert into tb_departamentos(dep_nome, dep_gerente_id)values
+('Finanças', '1'),
+('Comercial','3'),
+('Logística', '8'),
+('Compras', '9'),
+('Administrativo','11')
+;
