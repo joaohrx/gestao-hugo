@@ -30,3 +30,19 @@ insert into tb_departamentos(dep_nome, dep_gerente_id)values
 ('Compras', '9'),
 ('Administrativo','11')
 ;
+
+insert into tb_cargos (car_nome, car_salario_base) values
+()
+()
+()
+()
+()
+;
+
+insert into tb_funcionários (fun_nome, fun_car_id, fun_dep_id, fun_data_admissao)
+()
+()
+()
+()
+()
+;
