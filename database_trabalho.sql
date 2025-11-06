@@ -23,26 +23,27 @@ foreign key (fun_car_id) references tb_cargos(car_id),
 foreign key (fun_dep_id) references tb_departamentos(dep_id)
 );
 
-insert into tb_departamentos(dep_nome, dep_gerente_id)values
+insert into tb_departamentos(dep_nome, dep_gerente_id) values
 ('Finanças', '1'),
 ('Comercial','3'),
 ('Logística', '8'),
-('Compras', '9'),
+('Comercial', '9'),
 ('Administrativo','11')
 ;
 
 insert into tb_cargos (car_nome, car_salario_base) values
-()
-()
-()
-()
-()
+('Assistente', 2500),
+('Gerente', 6000),
+('Consultor', 4500),
+('Analista', 5000),
+('Diretor', 12000)
 ;
 
-insert into tb_funcionários (fun_nome, fun_car_id, fun_dep_id, fun_data_admissao)
-()
-()
-()
-()
-()
+insert into tb_funcionarios (fun_nome, fun_car_id, fun_dep_id, fun_data_admissao) values
+('Joaildo Campos', '2', '11', '2021-11-10'),
+('Vinícius Maia', '2', '9', '2024-05-06'),
+('Maria Camila', '1', '8', '2025-06-30'),
+('Kafka da Silva', '3', '1', '2023-03-15'),
+('Rodolfo Pires', '4', '3', '2024-06-20'),
+('Luciano Lamarte', '5', '11', '2021-07-15')
 ;
