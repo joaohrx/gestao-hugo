@@ -61,7 +61,7 @@ insert into tb_funcionarios (fun_nome, fun_car_id, fun_dep_id, fun_data_admissao
 ('Mônica Maurício', 1, 4, '2024-06-10'),
 ('Josef K', NULL, 4, '2025-11-02')
 ('Jorge de Burgos', 1, 2, '2022-09-05'),
-('Clausemira Creus', 1, 3, '2023-12-11'),
+('Clausemira Creuzodete', 1, 3, '2023-12-11'),
 ('Renato Moscou', 1, 5, '2024-02-28');
 ;
 
