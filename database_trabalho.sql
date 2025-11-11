@@ -98,3 +98,19 @@ select fun_nome, car_nome from tb_funcionarios
 join tb_cargos on fun_car_id = car_id
 where car_nome in ('gerente', 'diretor');
 
+-- 7
+SELECT dep_nome FROM tb_departamentos
+WHERE dep_gerente_id IS NULL;
+
+--8
+SELECT dep_nome, COUNT(tb_funcionarios.fun_id)
+FROM tb_departamentos LEFT JOIN tb_funcionarios ON tb_departamentos.dep_id = tb_funcionarios.fun_dep_id
+GROUP BY tb_departamentos.dep_id, tb_departamentos.dep_nome
+ORDER BY tb_departamentos.dep_nome;
+
+--9
+SELECT dep_nome, SUM(tb_cargos.car_salario_base)
+FROM tb_departamentos LEFT JOIN tb_funcionarios ON tb_departamentos.dep_id = tb_funcionarios.fun_dep_id
+LEFT JOIN tb_cargos ON tb_funcionarios.fun_car_id = tb_cargos.car_id
+GROUP BY tb_departamentos.dep_id, tb_departamentos.dep_nome
+ORDER BY tb_departamentos.dep_nome;
