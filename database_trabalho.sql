@@ -59,7 +59,7 @@ insert into tb_funcionarios (fun_nome, fun_car_id, fun_dep_id, fun_data_admissao
 ('Luciano Lamarte', 2, 5, '2021-07-15'),
 ('Fernando Ferraz', 5, 5, '2021-03-16'),
 ('Mônica Maurício', 1, 4, '2024-06-10'),
-('Josef K', NULL, 4, '2025-11-02')
+('Josef K', NULL, 4, '2025-11-02'),
 ('Jorge de Burgos', 1, 2, '2022-09-05'),
 ('Clausemira Creuzodete', 1, 3, '2023-12-11'),
 ('Renato Moscou', 1, 5, '2024-02-28');
@@ -82,5 +82,19 @@ join tb_departamentos on fun_dep_id = dep_id
 where car_id = 2;
 
 -- 3
-select car_nome, car_salario_base from tb_cargos
+select car_nome, car_salario_base from tb_cargos;
+
+-- 4
+select fun_nome, fun_data_admissao from tb_funcionarios
+where fun_data_admissao < '2024-01-01';
+
+-- 5 
+select car_nome,fun_nome from tb_funcionarios
+join tb_cargos on fun_car_id = car_id
+order by car_nome;
+
+-- 6 
+select fun_nome, car_nome from tb_funcionarios
+join tb_cargos on fun_car_id = car_id
+where car_nome in ('gerente', 'diretor');
 
