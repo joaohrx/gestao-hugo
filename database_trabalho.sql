@@ -131,3 +131,13 @@ join tb_funcionarios on fun_id = tra_fun_id;
 select car_nome, dep_nome from tb_cargos 
 join tb_funcionarios on tb_cargos.car_id = tb_funcionarios.fun_car_id
 join tb_departamentos on tb_funcionarios.fun_dep_id = tb_departamentos.dep_id;
+
+-- 14
+select g.fun_nome, dep_nome, f.fun_nome from tb_departamentos 
+join tb_funcionarios g on dep_gerente_id = g.fun_id
+join tb_funcionarios f on dep_id = f.fun_dep_id
+where g.fun_nome != f.fun_nome;
+
+-- 15
+select * from tb_funcionarios
+where fun_car_id is null;
