@@ -102,15 +102,26 @@ where car_nome in ('gerente', 'diretor');
 SELECT dep_nome FROM tb_departamentos
 WHERE dep_gerente_id IS NULL;
 
---8
+-- 8
 SELECT dep_nome, COUNT(tb_funcionarios.fun_id)
 FROM tb_departamentos LEFT JOIN tb_funcionarios ON tb_departamentos.dep_id = tb_funcionarios.fun_dep_id
 GROUP BY tb_departamentos.dep_id, tb_departamentos.dep_nome
 ORDER BY tb_departamentos.dep_nome;
 
---9
+-- 9
 SELECT dep_nome, SUM(tb_cargos.car_salario_base)
 FROM tb_departamentos LEFT JOIN tb_funcionarios ON tb_departamentos.dep_id = tb_funcionarios.fun_dep_id
 LEFT JOIN tb_cargos ON tb_funcionarios.fun_car_id = tb_cargos.car_id
 GROUP BY tb_departamentos.dep_id, tb_departamentos.dep_nome
 ORDER BY tb_departamentos.dep_nome;
+
+-- 11
+
+SELECT tb_cargos.car_nome, count(tb_funcionarios.fun_id) as 'total' from tb_cargos join tb_funcionarios on tb_cargos.car_id = tb_funcionarios.fun_car_id having 'total' > 5;
+-- 12.
+
+SELECT tb_funcionarios.fun_nome as 'funcionario', tb_departamentos_origem.dep_nome as 'departamento de origem', tb_departamentos_destino.dep_nome as 'departamento de destino', tb_transferencias.tra_data as 'data' from tb_transferencias join tb_funcionarios on tb_transferencias.tra_fun_id = tb_funcionarios.fun_id join tb_departamentos as tb_departamentos_origem on tb_transferencias.tra_dep_origem = tb_departamentos_origem.dep_id join tb_departamentos as tb_departamentos_destino on tb_transferencias.tra_dep_destino = tb_departamentos_destino.dep_id;
+
+-- 13.
+
+SELECT tb_cargos.car_nome as 'nome do cargo', tb_departamentos.dep_nome as 'nome do departamento'from tb_cargos join tb_funcionarios on tb_cargos.car_id = tb_funcionarios.fun_car_id join tb_departamentos on tb_funcionarios.fun_dep_id = tb_departamentos.dep_id;
